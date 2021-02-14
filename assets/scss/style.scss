@@ -9,6 +9,7 @@
 
 $primary-black: #1A1A1A;
 $spot-color: #FF206E;
+$spot-secondary: #008BF8;
 $title-font: 'Teko', sans-serif;
 $text-font: 'VT323', monospace;
 
@@ -17,10 +18,12 @@ $text-font: 'VT323', monospace;
 
 body {
     font-family: $text-font;
+    color: $primary-black;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: $title-font;
+    color: $primary-black;
 }
 
 /* ------ HEADER ------- */
@@ -28,6 +31,28 @@ h1, h2, h3, h4, h5, h6 {
 #logo {
     max-width: 180px;
     max-height: auto;
+
+    &:hover {
+        #letter-q {
+            transform-box: fill-box;
+            transform-origin: center;
+            animation: reflect 0.3s linear;
+            animation-fill-mode: forwards;
+            -webkit-animation-fill-mode: forwards;
+        }
+    }
+    
+}
+
+@keyframes reflect {
+    from {
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+    }
+    to {
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+    }
 }
 
 /* ------------------------ */
@@ -42,10 +67,20 @@ h1, h2, h3, h4, h5, h6 {
         min-height: 100%;
         background-color: $spot-color;
         position: absolute;
-        left: 30px;
-        top: 60px;
+        left: 50px;
+        top: 50px;
         z-index: -1;
+        transition: 0.3s;
     }
+    &:hover {
+        &::before {
+            background-color: $spot-secondary;
+        }
+    }
+}
+
+.text {
+    max-width: 80%;
 }
 
 /* ------------------------ */
@@ -53,6 +88,13 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ------ FOOTER ------- */
 
-
+footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    .minimize{
+        font-size: 10.72px;
+    }
+}
 
 /* ------------------------ */
