@@ -8,9 +8,51 @@
 /* ------ VARIABLES ------- */
 
 $primary-black: #1A1A1A;
+$spot-color: #FF206E;
 $title-font: 'Teko', sans-serif;
 $text-font: 'VT323', monospace;
 
 /* ------------------------ */
 
 
+body {
+    font-family: $text-font;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $title-font;
+}
+
+/* ------ HEADER ------- */
+
+#logo {
+    max-width: 180px;
+    max-height: auto;
+}
+
+/* ------------------------ */
+
+/* ------ MAIN ------- */
+
+.portrait {
+    position: relative;
+    &::before {
+        content: "";
+        min-width: 100%;
+        min-height: 100%;
+        background-color: $spot-color;
+        position: absolute;
+        left: 30px;
+        top: 60px;
+        z-index: -1;
+    }
+}
+
+/* ------------------------ */
+
+
+/* ------ FOOTER ------- */
+
+
+
+/* ------------------------ */
