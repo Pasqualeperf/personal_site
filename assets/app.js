@@ -10,10 +10,11 @@ function changePortrait(image) {
 
 changePortrait(portrait);
 
-function doMagicWithColors(obj) {
+function doMagicWithColors(obj, textMessage = "") {
     const titles = document.querySelectorAll(".title");
     const text = document.querySelectorAll(".text");
     const svg = document.querySelectorAll(".path");
+    const colorWin = document.querySelector("#colorWin");
     if (obj) {
         document.body.style.backgroundColor = obj.getOriginalInput();
         if (obj.isLight()) {
@@ -37,12 +38,16 @@ function doMagicWithColors(obj) {
                 element.style.fill = "#FFFFFF";
             });
         }
+
+        console.log(colorWin);
+        colorWin.appendChild(textMessage);
     }
 }
 
 
 function bodySwitchColor(color) {
     let bodyColor = "";
+    let rewards;
     switch (color) {
         case "nero":
         case "black":
@@ -59,6 +64,8 @@ function bodySwitchColor(color) {
         case "rosso":
         case "red":    
             bodyColor = "#D90429";
+            rewards = document.createElement("h5");
+            rewards.innerHTML = "Grande! Anche il mio hai vinto un attacco DDoS gratis";
             break;
         case "arancione":
         case "arancio":
@@ -101,7 +108,8 @@ function bodySwitchColor(color) {
 
     let result = new tinycolor(bodyColor);
     
-    doMagicWithColors(result);
+    doMagicWithColors(result, rewards);
+
 }
 
 const colorButton = document.querySelector("#colorButton");
