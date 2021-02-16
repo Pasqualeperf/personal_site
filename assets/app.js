@@ -10,7 +10,8 @@ function changePortrait(image) {
 
 changePortrait(portrait);
 
-function doMagicWithColors(obj, textMessage = "") {
+function doMagicWithColors(obj, textMessage) {
+    
     const titles = document.querySelectorAll(".title");
     const text = document.querySelectorAll(".text");
     const svg = document.querySelectorAll(".path");
@@ -39,8 +40,11 @@ function doMagicWithColors(obj, textMessage = "") {
             });
         }
 
-        console.log(colorWin);
-        colorWin.appendChild(textMessage);
+        if (textMessage) {
+            colorWin.appendChild(textMessage);
+        } else {
+            colorWin.innerHTML = "";
+        }
     }
 }
 
@@ -65,7 +69,7 @@ function bodySwitchColor(color) {
         case "red":    
             bodyColor = "#D90429";
             rewards = document.createElement("h5");
-            rewards.innerHTML = "Grande! Anche il mio hai vinto un attacco DDoS gratis";
+            rewards.innerHTML = "Grande! Rosso è anche il mio preferito hai vinto un attacco DDoS gratis";
             break;
         case "arancione":
         case "arancio":
@@ -107,8 +111,13 @@ function bodySwitchColor(color) {
     }
 
     let result = new tinycolor(bodyColor);
+
+    if (rewards) {    
+        doMagicWithColors(result, rewards);
+    } else {
+        doMagicWithColors(result);
+    }
     
-    doMagicWithColors(result, rewards);
 
 }
 
