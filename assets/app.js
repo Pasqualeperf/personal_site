@@ -107,6 +107,7 @@ function bodySwitchColor(color) {
             break;
         default:
             alert("Dai lo so che stai scherzando! Inserisci un colore comune.")
+            bodyColor = "#FFFFFF";
             break;
     }
 
