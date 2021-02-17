@@ -106,3 +106,24 @@ footer {
 }
 
 /* ------------------------ */
+
+
+/* ------ MEDIA QUERIES ------- */
+
+@media only screen and (max-width: 600px) {
+    .portrait {
+        &::before {
+            content: "";
+            min-width: 100%;
+            min-height: 100%;
+            background-color: $spot-color;
+            position: absolute;
+            left: 10px;
+            top: 50px;
+            z-index: -1;
+            transition: 0.3s;
+        }
+    }
+}
+
+/* ------------------------ */
