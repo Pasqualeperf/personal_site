@@ -16,6 +16,8 @@ function doMagicWithColors(obj, textMessage) {
     const text = document.querySelectorAll(".text");
     const svg = document.querySelectorAll(".path");
     const colorWin = document.querySelector("#colorWin");
+    const githubIcon = document.querySelector("#githubIcon");
+    const linkedinIcon = document.querySelector("#linkedinIcon");
     if (obj) {
         document.body.style.backgroundColor = obj.getOriginalInput();
         if (obj.isLight()) {
@@ -28,6 +30,8 @@ function doMagicWithColors(obj, textMessage) {
             svg.forEach(element => {
                 element.style.fill = "#1A1A1A";
             });
+            githubIcon.style.fill = "#1A1A1A";
+            linkedinIcon.style.fill = "#1A1A1A";
         } else {
             titles.forEach(element => {
                 element.style.color = "#FFFFFF";
@@ -38,6 +42,8 @@ function doMagicWithColors(obj, textMessage) {
             svg.forEach(element => {
                 element.style.fill = "#FFFFFF";
             });
+            githubIcon.style.fill = "#FFFFFF";
+            linkedinIcon.style.fill = "#FFFFFF";
         }
 
         if (textMessage) {
