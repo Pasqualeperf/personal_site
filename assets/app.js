@@ -98,12 +98,17 @@ function bodySwitchColor(color) {
             bodyColor = "#7209B7";
             break;
         case "celeste":
+        case "azzurro":    
         case "heavenly":
             bodyColor = "#0077b6";
             break;
         case "marrone":
         case "brown":    
             bodyColor = "#774936";
+            break;
+        case "fucsia":
+        case "fuchsia":    
+            bodyColor = "#db00b6";
             break;
         default:
             alert("Dai lo so che stai scherzando! Inserisci un colore comune.")
